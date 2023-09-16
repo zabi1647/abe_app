@@ -1,7 +1,6 @@
 import 'package:abe_app/common_widgets/icon_container.dart';
 import 'package:abe_app/common_widgets/spacer.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,16 +11,36 @@ class HomePage extends StatelessWidget {
     double width = MediaQuery.sizeOf(context).width;
     return Scaffold(
       appBar: AppBar(
+        leading: Container(
+          width: 40,
+          height: 40,
+          decoration: const BoxDecoration(
+            shape: BoxShape.circle,
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black,
+                blurRadius: 1,
+              ),
+            ],
+            color: Colors.white,
+          ),
+          child: IconButton(
+              iconSize: 20,
+              onPressed: () {},
+              icon: const Icon(
+                Icons.arrow_back_ios_sharp,
+              )),
+        ),
         actions: [
           Iconbutton(
               width: width * 0.1,
               height: height * 0.1,
-              icon: Icon(Icons.search_rounded)),
+              icon: const Icon(Icons.search_rounded)),
           spacer(width: width * 0.05),
           Iconbutton(
             width: width * 0.1,
             height: height * 0.1,
-            icon: Icon(Icons.notifications_on),
+            icon: const Icon(Icons.notifications_on),
           ),
           spacer(width: width * 0.05),
           Container(
@@ -36,15 +55,11 @@ class HomePage extends StatelessWidget {
                 )
               ],
               color: Colors.white,
+              image: const DecorationImage(
+                  image: AssetImage('assets/human.jpg'), fit: BoxFit.cover),
             ),
-            child: SvgPicture.asset(
-              'assets/david.svg',
-              fit: BoxFit.fill,
-              semanticsLabel: 'Svg iamge',
-              width: width * 0.08,
-              height: height * 0.08,
-            ),
-          )
+          ),
+          spacer(width: width * 0.05),
         ],
       ),
     );
