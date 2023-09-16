@@ -1,6 +1,7 @@
 import 'package:abe_app/common_widgets/spacer.dart';
 import 'package:abe_app/common_widgets/text_field.dart';
 import 'package:abe_app/common_widgets/text_style.dart';
+import 'package:abe_app/screens/home_screen/home_page.dart';
 import 'package:abe_app/screens/login_screen.dart/sign_up.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +32,7 @@ class Login extends StatelessWidget {
                 spacer(height: height * 0.01),
                 SizedBox(
                   width: width * 0.7,
-                  child: inputfield(guss: "Password"),
+                  child: inputfield(guss: "Password", showtext: true),
                 ),
                 spacer(height: height * 0.01),
                 const Align(
@@ -40,7 +41,10 @@ class Login extends StatelessWidget {
                 ),
                 spacer(height: height * 0.03),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => HomePage()));
+                  },
                   child: Container(
                     width: width * 0.4,
                     height: height * 0.05,
