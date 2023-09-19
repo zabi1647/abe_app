@@ -111,43 +111,44 @@ class HomePage extends StatelessWidget {
                 length: 2,
                 child: Column(
                   children: [
-                    TabBar(
-                      tabs: [
-                        Container(
-                          width: width,
-                          height: height * 0.04,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 3,
-                                offset: Offset(1, 2),
+                    Container(
+                      padding: EdgeInsets.all(0),
+                      width: width * 0.8,
+                      height: height * 0.05,
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(25),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 2,
+                              offset: Offset(1, 2),
+                            )
+                          ]),
+                      child: TabBar(
+                          unselectedLabelColor: Colors.white,
+                          indicator: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.black,
+                          ),
+                          indicatorSize: TabBarIndicatorSize
+                              .label, // Set indicatorSize to label
+                          indicatorWeight: 2.0,
+                          tabs: [
+                            Container(
+                              padding: EdgeInsets.all(0),
+                              width: width * 0.4,
+                              height: height * 0.05,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
                               ),
-                            ],
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Center(
-                            child: Text("COMMERCIAL"),
-                          ),
-                        ),
-                        Container(
-                          width: width,
-                          height: height * 0.04,
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(
-                                blurRadius: 3,
-                                offset: Offset(1, 2),
-                              ),
-                            ],
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                          child: Center(
-                            child: Text("COMMERCIAL"),
-                          ),
-                        ),
-                      ],
+                              child: Center(child: Text("zohaib")),
+                            ),
+                            Container(
+                              width: width * 0.4,
+                              height: height * 0.05,
+                              child: Center(child: Text("zohaib")),
+                            ),
+                          ]),
                     )
                   ],
                 ))
